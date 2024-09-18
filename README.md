@@ -65,7 +65,7 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
 <h1>Toko Baju</h1>
-<p>The Clothing Store application is used to record and track sales, complete with invoices for buyers to facilitate payments and ensure ease of use.</p>
+<p>The Toko Baju application is used to record and track sales, complete with invoices for buyers to facilitate payments and ensure ease of use.</p>
 
 <p>And on GitHub, this only stores the back end without a front end.</p>
 
