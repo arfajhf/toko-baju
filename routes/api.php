@@ -22,6 +22,7 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::middleware('roles:admin')->prefix('admin')->group(function(){
+        Route::get('/profile', [AuthController::class, 'profile']);
         Route::controller(AdminController::class)->group(function(){
             Route::prefix('inventaris')->group(function(){
                 Route::get('/', 'inventaris');

@@ -33,6 +33,15 @@ class AuthController extends Controller
         ]);
     }
 
+    public function profile(Request $request){
+        $data = $request->user();
+
+        return response()->json([
+            "status" => "success",
+            "data" => $data
+        ]);
+    }
+
     public function logout(Request $request)
     {
         $request->user()->currentAccessToken()->delete();
