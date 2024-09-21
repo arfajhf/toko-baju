@@ -1,3 +1,4 @@
+-- Active: 1723383122336@@127.0.0.1@3306@tokobaju
 <?php
 
 use App\Http\Controllers\admin\AdminController;
@@ -22,7 +23,11 @@ Route::middleware('auth:sanctum')->group(function() {
     Route::post('/logout', [AuthController::class, 'logout']);
 
     Route::middleware('roles:admin')->prefix('admin')->group(function(){
-        Route::get('/profile', [AuthController::class, 'profile']);
+        Route::controller(AuthController::class)->group(function(){
+            Route::get('/profile','profile');
+            Route::post('/profile/updateorcreate','updateOrCreate');
+            Route::put('/profile/forgoat', 'forgoat');
+        });
         Route::controller(AdminController::class)->group(function(){
             Route::prefix('inventaris')->group(function(){
                 Route::get('/', 'inventaris');
